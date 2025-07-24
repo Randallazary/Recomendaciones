@@ -9,10 +9,10 @@ async def root():
     "message": "Sistema de Recomendación de Productos"
   }
 
-@app.get('/recommend/{partNumber}')
-async def predict(partNumber: str, n_items: int = 10):
+@app.get('/recommend/{name}')
+async def predict(name: str, n_items: int = 10):
   recomender = RecomenderService()
-  recomendations: list[str] = recomender.recomendation(partNumber, n_items)
+  recomendations: list[str] = recomender.recomendation(name, n_items)
   
   return {
     "recomendations": recomendations
