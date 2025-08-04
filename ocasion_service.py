@@ -5,7 +5,7 @@ class OcasionService:
     def __init__(self):
         # Usamos rutas absolutas basadas en la ubicación del archivo
         base_dir = Path(__file__).parent
-        self.model = joblib.load(base_dir / 'models_ocasion.pkl')
+        self.model = joblib.load(base_dir / 'modelo_ocasion.pkl')
         self.vectorizer = joblib.load(base_dir / 'vectorizer_ocasion.pkl')
     
     def classify(self, product_data: dict) -> str:
